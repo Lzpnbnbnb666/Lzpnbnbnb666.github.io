@@ -1,247 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>dyjx | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="制作钓鱼网站  打开kali后缀 登入 root  123456 ocks4改为socks5 ＋ clash上的代理地址和端口 按esc  x +回车 proxychains4 git clone https:&#x2F;&#x2F;github.com&#x2F;makdosx&#x2F;mip22 利用网站下载文件 cd mip22 进入mip22目录 chmod +x &#x2F;* 将目录的所有文件拥有可执行权限 proxych">
-<meta property="og:type" content="article">
-<meta property="og:title" content="dyjx">
-<meta property="og:url" content="http://example.com/2023/12/02/dyjx/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="制作钓鱼网站  打开kali后缀 登入 root  123456 ocks4改为socks5 ＋ clash上的代理地址和端口 按esc  x +回车 proxychains4 git clone https:&#x2F;&#x2F;github.com&#x2F;makdosx&#x2F;mip22 利用网站下载文件 cd mip22 进入mip22目录 chmod +x &#x2F;* 将目录的所有文件拥有可执行权限 proxych">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://raw.githubusercontent.com/Lzpnbnbnb666/pic/main/tmp/202312021806437.png">
-<meta property="article:published_time" content="2023-12-02T10:05:05.000Z">
-<meta property="article:modified_time" content="2023-12-02T10:10:02.450Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/Lzpnbnbnb666/pic/main/tmp/202312021806437.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+extends includes/layout.pug
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+block content
+  #post
+    if top_img === false
+      include includes/header/post-info.pug
 
-  
-  
-<meta name="generator" content="Hexo 7.0.0"></head>
+    article#article-container.post-content!=page.content
+    include includes/post/post-copyright.pug
+    .tag_share
+      if (theme.post_meta.post.tags)
+        .post-meta__tag-list
+          each item, index in page.tags.data
+            a(href=url_for(item.path)).post-meta__tags #[=item.name]
+      include includes/third-party/share/index.pug
+        
+    if theme.reward.enable && theme.reward.QR_code
+      !=partial('includes/post/reward', {}, {cache: true})
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
+    //- ad
+    if theme.ad && theme.ad.post
+      .ads-wrap!=theme.ad.post
+
+    if theme.post_pagination
+      include includes/pagination.pug
+    if theme.related_post && theme.related_post.enable
+      != related_posts(page,site.posts)
+
+    if page.comments !== false && theme.comments && theme.comments.use
+      - var commentsJsLoad = true
+      !=partial('includes/third-party/comments/index', {}, {cache: true})
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-dyjx" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/12/02/dyjx/" class="article-date">
-  <time class="dt-published" datetime="2023-12-02T10:05:05.000Z" itemprop="datePublished">2023-12-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      dyjx
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>制作钓鱼网站</p>
-<p><img src="https://raw.githubusercontent.com/Lzpnbnbnb666/pic/main/tmp/202312021806437.png"></p>
-<p>打开kali后缀 登入 root  123456</p>
-<p>ocks4改为socks5 ＋ clash上的代理地址和端口 按esc  x +回车</p>
-<p>proxychains4 git clone <a target="_blank" rel="noopener" href="https://github.com/makdosx/mip22">https://github.com/makdosx/mip22</a> 利用网站下载文件</p>
-<p>cd mip22 进入mip22目录</p>
-<p>chmod +x &#x2F;* 将目录的所有文件拥有可执行权限</p>
-<p>proxychains4 -q bash .&#x2F;mip22.sh 执行mip22</p>
-<p>进入mip22界面 按1进入 钓鱼网站界面 选择钓鱼网站 按3 开始收集信息等待复制 URL http(s)的链接</p>
-<p>获取status_code </p>
-<p>import requests</p>
-<p>url &#x3D; “<a target="_blank" rel="noopener" href="https://httpbin.org/get">https://httpbin.org/get</a></p>
-<p>r &#x3D; requests.get(url)</p>
-<p>print(r.status_code)</p>
-<p>下载 VS Code Insiders</p>
-<p>扩展chinese（Simplified)</p>
-<p>​       Code Runner</p>
-<p>​        Tabinne</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/12/02/dyjx/" data-id="clpnw7nw30000h4vtc1j7c03q" data-title="dyjx" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2023/12/02/wycbmm/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          wycbmm
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2023/12/02/first/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">first</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/12/02/djbk/">djbk</a>
-          </li>
-        
-          <li>
-            <a href="/2023/12/02/wycbmm/">wycbmm</a>
-          </li>
-        
-          <li>
-            <a href="/2023/12/02/dyjx/">dyjx</a>
-          </li>
-        
-          <li>
-            <a href="/2023/12/02/first/">first</a>
-          </li>
-        
-          <li>
-            <a href="/2023/12/01/test-my-site/">test_my_site</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2023 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
